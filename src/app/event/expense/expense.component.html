@@ -1,0 +1,19 @@
+<div class="right floated content">
+  <a class="ui button" routerLinkActive="active" (click)="edit()">Edit</a>
+  <a class="ui button red" (click)="delete()">Remove</a>
+</div>
+<div class="header">
+  {{expense.description}} €{{expense.amount}}
+</div>
+
+<div class="content">
+  <h4 class="subheader">
+    {{ expense.paidBy.firstname }} {{ expense.paidBy.lastname }}
+  </h4>
+  <ul>
+    Paid for
+    <li *ngFor="let person of expense.paidFor">
+      {{person.firstname}} {{person.lastname}}
+    </li>
+  </ul>
+</div>
