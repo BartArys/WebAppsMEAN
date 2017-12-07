@@ -1,0 +1,3 @@
+<div class="ui large celled animated list">
+  <app-event class="item" *ngFor="let e of events" [event]="e" (removeEvent)="removeEvent($event)"></app-event>
+</div>
