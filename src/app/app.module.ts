@@ -15,7 +15,6 @@ import { PersonModule } from './person/person.module';
 @NgModule({
   declarations: [
     AppComponent,
-    FriendsComponent,
     PageNotFoundComponent
   ],
   imports: [
