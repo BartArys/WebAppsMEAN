@@ -12,7 +12,14 @@ var app = express();
 const mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 
-mongoose.connect('mongodb://localhost/omeDB', {
+if (!process.env.SIGN_SECRET) {
+  const result = require('dotenv').config()
+  if (result.error) {
+    throw result.error;
+  }
+}
+
+mongoose.connect(process.env.DB_URL, {
   useMongoClient: true
 });
 
@@ -41,12 +48,7 @@ var distDir = path.join(__dirname, 'dist');
 app.use(express.static(distDir));
 app.use(passport.initialize());
 
-if (!process.env.SIGN_SECRET) {
-  const result = require('dotenv').config()
-  if (result.error) {
-    throw result.error;
-  }
-}
+
 
 const person = require('./routes/person');
 const event = require('./routes/event');
