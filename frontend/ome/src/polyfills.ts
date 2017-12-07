@@ -74,3 +74,14 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  * Need to import at least one locale-data with intl.
  */
 // import 'intl/locale-data/jsonp/en';
+
+/*
+import $ from 'jquery';
+window['jQuery'] = $;
+
+declare let require: any;
+
+require('../semantic/dist/semantic.min.js');
+require('../semantic/dist/components/dropdown.js');
+console.log('loaded');
+*/

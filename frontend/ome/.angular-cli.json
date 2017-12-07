@@ -1,7 +1,7 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "project": {
-    "name": "omy"
+    "name": "ome"
   },
   "apps": [{
     "root": "src",
@@ -21,7 +21,8 @@
       "styles.css"
     ],
     "scripts": [
-      "../semantic/dist/semantic.min.js"
+      "../semantic/dist/semantic.min.js",
+      "../semantic/dist/components/dropdown.js"
     ],
     "environmentSource": "environments/environment.ts",
     "environments": {
