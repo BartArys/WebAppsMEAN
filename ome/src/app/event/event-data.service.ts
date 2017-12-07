@@ -8,7 +8,7 @@ import { AuthenticationService } from '../person/authentication.service';
 
 @Injectable()
 export class EventDataService {
-  private _appUrl = 'http://localhost:4200/API/Events';
+  private _appUrl = 'http://localhost:8080/API/Events';
 
   constructor(private http: Http, private auth: AuthenticationService) { }
 

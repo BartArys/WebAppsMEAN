@@ -8,7 +8,7 @@ import { Person } from './person/person.model';
 
 @Injectable()
 export class PersonDataService {
-  private _appUrl = 'http://localhost:4200/API/People';
+  private _appUrl = 'http://localhost:8080/API/People';
 
   constructor(private http: Http, private auth: AuthenticationService) { }
 

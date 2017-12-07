@@ -36,7 +36,9 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
+
+var distDir = path.join(__dirname, 'dist');
+app.use(express.static(distDir));
 app.use(passport.initialize());
 
 if (!process.env.SIGN_SECRET) {

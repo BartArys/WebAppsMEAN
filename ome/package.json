@@ -2,15 +2,16 @@
   "name": "ome",
   "version": "0.0.0",
   "license": "MIT",
+  "private": true,
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --proxy-config proxy.conf.json",
+    "start": "node ./bin/www",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "postinstall": "ng build"
   },
-  "private": true,
   "dependencies": {
     "@angular/animations": "^5.0.0",
     "@angular/common": "^5.0.0",
@@ -25,9 +26,7 @@
     "rxjs": "^5.5.2",
     "semantic-ui": "^2.2.13",
     "typings": "^2.1.1",
-    "zone.js": "^0.8.14"
-  },
-  "devDependencies": {
+    "zone.js": "^0.8.14",
     "@angular/cli": "1.5.4",
     "@angular/compiler-cli": "^5.0.0",
     "@angular/language-service": "^5.0.0",
@@ -46,6 +45,19 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
-    "typescript": "~2.4.2"
+    "typescript": "~2.4.2",
+    "body-parser": "~1.18.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.6.9",
+    "dotenv": "^4.0.0",
+    "express": "~4.15.5",
+    "express-jwt": "^5.3.0",
+    "jade": "~1.11.0",
+    "jsonwebtoken": "^8.1.0",
+    "mongoose": "^4.13.5",
+    "morgan": "~1.9.0",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "serve-favicon": "~2.4.5"
   }
 }

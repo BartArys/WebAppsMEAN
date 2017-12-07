@@ -8,8 +8,8 @@ import { Expense } from './expense.model';
 
 @Injectable()
 export class ExpenseDataService {
-  private _eventUrl = 'http://localhost:4200/API/Events';
-  private _expenseUrl = 'http://localhost:4200/API/Expenses';
+  private _eventUrl = 'http://localhost:8080/API/Events';
+  private _expenseUrl = 'http://localhost:8080/API/Expenses';
 
   constructor(private http: Http, private auth: AuthenticationService) { }
 
