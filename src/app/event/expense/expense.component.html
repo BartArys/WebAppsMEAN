@@ -1,4 +1,4 @@
-<div class="right floated content">
+<div *ngIf="isCreator()" class="right floated content">
   <a class="ui button" routerLinkActive="active" (click)="edit()">Edit</a>
   <a class="ui button red" (click)="delete()">Remove</a>
 </div>

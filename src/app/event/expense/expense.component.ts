@@ -3,6 +3,7 @@ import { Component, Input, NgModule, OnInit, Output, EventEmitter } from '@angul
 import { Expense } from '../expense.model';
 import { EventDataService } from '../../event/event-data.service';
 import { Router } from '@angular/router';
+import { AuthenticationService } from '../../person/authentication.service';
 
 @Component({
   selector: 'app-expense',
@@ -15,10 +16,15 @@ export class ExpenseComponent implements OnInit {
   @Output() public removeExpense = new EventEmitter<String>();
 
   constructor(private dataService: ExpenseDataService,
+    private authService: AuthenticationService,
     private router: Router) {
   }
 
   ngOnInit() {
+  }
+
+  isCreator(): boolean {
+    return this.expense.paidBy.email === this.authService.person.email;
   }
 
   edit() {
