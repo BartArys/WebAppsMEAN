@@ -17,7 +17,7 @@ export class EventComponent implements OnInit {
   }
 
   total(): Number {
-    return this.event.expenses.map(expense => expense.amount).reduce((prev, curr) => prev.valueOf() + curr.valueOf());
+    return this.event.expenses.map(expense => expense.amount).reduce((prev, curr) => prev.valueOf() + curr.valueOf(), 0);
   }
 
   delete() {

@@ -835,7 +835,7 @@ var EventComponent = (function () {
     EventComponent.prototype.ngOnInit = function () {
     };
     EventComponent.prototype.total = function () {
-        return this.event.expenses.map(function (expense) { return expense.amount; }).reduce(function (prev, curr) { return prev.valueOf() + curr.valueOf(); });
+        return this.event.expenses.map(function (expense) { return expense.amount; }).reduce(function (prev, curr) { return prev.valueOf() + curr.valueOf(); }, 0);
     };
     EventComponent.prototype.delete = function () {
         var _this = this;
