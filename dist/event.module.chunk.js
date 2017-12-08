@@ -21,7 +21,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/event/add-event/add-event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"ui large form segment\" [formGroup]='event' (ngSubmit)='onSubmit()'>\n  <h3 class=\"ui dividing header\">Add event</h3>\n  <div class=\"required field\">\n    <label for='name'>Name:</label>\n    <input id=\"name\" name='name' formControlName='name' #spy>\n    <div *ngIf='event.get(\"name\").errors?.required && event.get(\"name\").touched' class='ui negative message'>\n      please fill out a name\n    </div>\n  </div>\n\n  <div class=\"required field\">\n    <label>People</label>\n    <select formControlName=\"people\" multiple=\"\" class=\"ui fluid search dropdown\" id=\"multi-select\">\n      <option *ngFor=\"let person of people\" [ngValue]=\"person\">\n        {{ person.firstname }} {{ person.lastname }}\n      </option>\n    </select>\n  </div>\n  <!--\n  <div formArrayName='expenses' *ngFor='let item of event.get(\"expenses \").controls; let i = index'>\n    <div class=\"two fields \" [formGroupName]='i'>\n      <div class=\"required field \">\n        <label for='expense_description'>Description:</label>\n        <input type=\"text \" id='expense_description' formControlName='description'>\n      </div>\n      <div class=\"required field \">\n        <label for='expense_amount'>Amount:</label>\n        <input type=\"number \" id='expense_amount' formControlName='amount'>\n      </div>\n    </div>\n  </div>\n-->\n  <button type='submit' class=\"ui positive fluid button \" [disabled]=\"!event.valid\">\n    add event\n  </button>\n</form>\n"
+module.exports = "<form class=\"ui large form segment\" [formGroup]='event' (ngSubmit)='onSubmit()'>\n  <h3 class=\"ui dividing header\">Add event</h3>\n  <div class=\"required field\">\n    <label for='name'>Name:</label>\n    <input id=\"name\" name='name' formControlName='name'>\n    <div *ngIf='event.get(\"name\").errors?.required && event.get(\"name\").touched' class='ui negative message'>\n      please fill out a name\n    </div>\n  </div>\n\n  <div class=\"required field\">\n    <label>People</label>\n    <select formControlName=\"people\" multiple=\"\" class=\"ui fluid search dropdown\" id=\"multi-select\">\n      <option *ngFor=\"let person of people\" [ngValue]=\"person\">\n        {{ person.firstname }} {{ person.lastname }}\n      </option>\n    </select>\n    <div class='ui negative message' *ngIf=' event.get(\"people\").errors?.required && event.get(\"people\").touched'>\n      please select at least one person\n    </div>\n  </div>\n  <button type='submit' class=\"ui positive fluid button \" [disabled]=\"!event.valid\">\n    add event\n  </button>\n</form>\n"
 
 /***/ }),
 
@@ -369,7 +369,7 @@ var EventDataService = (function () {
     function EventDataService(http, auth) {
         this.http = http;
         this.auth = auth;
-        this._appUrl = 'http://localhost:8080/API/Events';
+        this._appUrl = '/API/Events';
     }
     Object.defineProperty(EventDataService.prototype, "events", {
         get: function () {
@@ -889,8 +889,8 @@ var ExpenseDataService = (function () {
     function ExpenseDataService(http, auth) {
         this.http = http;
         this.auth = auth;
-        this._eventUrl = 'http://localhost:8080/API/Events';
-        this._expenseUrl = 'http://localhost:8080/API/Expenses';
+        this._eventUrl = '/API/Events';
+        this._expenseUrl = '/API/Expenses';
     }
     ExpenseDataService.prototype.addExpense = function (expense) {
         return this.http.post(this._eventUrl + "/" + expense.event.id + "/expenses", expense, { headers: new __WEBPACK_IMPORTED_MODULE_1__angular_http__["a" /* Headers */]({ Authorization: "Bearer " + this.auth.token }) });

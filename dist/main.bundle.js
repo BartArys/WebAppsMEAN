@@ -149,17 +149,15 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__("../../../platform-browser/esm5/platform-browser.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__friends_friends_component__ = __webpack_require__("../../../../../src/app/friends/friends.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/page-not-found/page-not-found.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__person_person_module__ = __webpack_require__("../../../../../src/app/person/person.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__page_not_found_page_not_found_component__ = __webpack_require__("../../../../../src/app/page-not-found/page-not-found.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_routing_module__ = __webpack_require__("../../../../../src/app/app-routing.module.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__person_person_module__ = __webpack_require__("../../../../../src/app/person/person.module.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-
 
 
 
@@ -173,80 +171,18 @@ var AppModule = (function () {
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["I" /* NgModule */])({
             declarations: [
                 __WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */],
-                __WEBPACK_IMPORTED_MODULE_3__friends_friends_component__["a" /* FriendsComponent */],
-                __WEBPACK_IMPORTED_MODULE_4__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
+                __WEBPACK_IMPORTED_MODULE_3__page_not_found_page_not_found_component__["a" /* PageNotFoundComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
-                __WEBPACK_IMPORTED_MODULE_6__person_person_module__["a" /* PersonModule */],
-                __WEBPACK_IMPORTED_MODULE_5__app_routing_module__["a" /* RoutingModule */]
+                __WEBPACK_IMPORTED_MODULE_5__person_person_module__["a" /* PersonModule */],
+                __WEBPACK_IMPORTED_MODULE_4__app_routing_module__["a" /* RoutingModule */]
             ],
             providers: [],
             bootstrap: [__WEBPACK_IMPORTED_MODULE_2__app_component__["a" /* AppComponent */]]
         })
     ], AppModule);
     return AppModule;
-}());
-
-
-
-/***/ }),
-
-/***/ "../../../../../src/app/friends/friends.component.css":
-/***/ (function(module, exports, __webpack_require__) {
-
-exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
-// imports
-
-
-// module
-exports.push([module.i, "", ""]);
-
-// exports
-
-
-/*** EXPORTS FROM exports-loader ***/
-module.exports = module.exports.toString();
-
-/***/ }),
-
-/***/ "../../../../../src/app/friends/friends.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<p>\n  friends works!\n</p>\n"
-
-/***/ }),
-
-/***/ "../../../../../src/app/friends/friends.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FriendsComponent; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-var FriendsComponent = (function () {
-    function FriendsComponent() {
-    }
-    FriendsComponent.prototype.ngOnInit = function () {
-    };
-    FriendsComponent = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["n" /* Component */])({
-            selector: 'app-friends',
-            template: __webpack_require__("../../../../../src/app/friends/friends.component.html"),
-            styles: [__webpack_require__("../../../../../src/app/friends/friends.component.css")]
-        }),
-        __metadata("design:paramtypes", [])
-    ], FriendsComponent);
-    return FriendsComponent;
 }());
 
 
@@ -274,7 +210,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/page-not-found/page-not-found.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  page-not-found works!\n</p>\n"
+module.exports = "<h2 class=\"header\">Looks like you're lost kiddo</h2>\n"
 
 /***/ }),
 
@@ -658,7 +594,7 @@ var PersonDataService = (function () {
     function PersonDataService(http, auth) {
         this.http = http;
         this.auth = auth;
-        this._appUrl = 'http://localhost:8080/API/People';
+        this._appUrl = '/API/People';
     }
     Object.defineProperty(PersonDataService.prototype, "people", {
         get: function () {
@@ -832,7 +768,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/person/register/register.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"ui centered grid\">\n  <div class=\"eight wide column\">\n    <form class=\"large ui stached form\" [formGroup]=\"person\" (ngSubmit)=\"register()\">\n      <div class=\"stacked ui segment\">\n        <div class=\"two fields\">\n          <div class=\"required field\">\n            <label for=\"firstname\">First name:</label>\n            <input id=\"firstname\" name=\"firstname\" formControlName=\"firstname\">\n            <div *ngIf=\"person.get('firstname').touched\">\n              <div class=\"ui negative message\" *ngIf=\"person.get('firstname').errors?.required\">\n                field is required\n              </div>\n              <div class=\"ui negative message\" *ngIf=\"person.get('firstname').errors?.minLength\">\n                minimum length of 2 required\n              </div>\n            </div>\n          </div>\n          <div class=\"required field\">\n            <label for=\"lastname\">Last name:</label>\n            <input id=\"lastname\" name=\"lastname\" formControlName=\"lastname\">\n            <div *ngIf=\"person.get('lastname').touched\">\n              <div class=\"ui negative message\" *ngIf=\"person.get('lastname').errors?.required\">\n                field is required\n              </div>\n              <div class=\"ui negative message\" *ngIf=\"person.get('lastname').errors?.minLength\">\n                minimum length of 2 required\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"required field\">\n          <label for=\"email\">email</label>\n          <input id=\"email\" name=\"email\" formControlName=\"email\">\n          <div *ngIf=\"person.get('email').touched\">\n            <div class=\"ui negative message\" *ngIf=\"person.get('email').errors?.required\">\n              field is required\n            </div>\n            <div class=\"ui negative message\" *ngIf=\"person.get('email').errors?.email\">\n              enter a valid email\n            </div>\n          </div>\n        </div>\n        <div formGroupName='passwordGroup'>\n          <div class=\"required field\">\n            <label for=\"password\">Password:</label>\n            <input type=\"password\" id=\"password\" formControlName='password'>\n            <div class='ui negative message' *ngIf=' passwordControl.errors?.passwordTooShort && passwordControl.touched'>\n              password too short, please use at least {{passwordControl.errors?.passwordTooShort.requiredLength}} letters (got {{passwordControl.errors?.passwordTooShort.actualLength}})\n            </div>\n          </div>\n          <div class=\"required field\">\n            <label for=\"confirmPassword\">Confirm password:</label>\n            <input type=\"password\" id=\"confirmPassword\" formControlName='confirmPassword'>\n          </div>\n          <div class='ui negative message' *ngIf=' person.get(\"passwordGroup\").errors?.passwordsDiffer && person.get(\"passwordGroup\").get(\"confirmPassword\").touched  && person.get(\"passwordGroup\").get(\"password\").touched'>\n            passwords should be the same\n          </div>\n        </div>\n        <br>\n        <button type='submit' [disabled]='!person.valid' class=\"ui big positive fluid button\">register</button>\n      </div>\n    </form>\n\n  </div>\n</div>\n{{ person.valid }} {{ person.value | json }}\n"
+module.exports = "<div class=\"ui centered grid\">\n  <div class=\"eight wide column\">\n    <form class=\"large ui stached form\" [formGroup]=\"person\" (ngSubmit)=\"register()\">\n      <div class=\"stacked ui segment\">\n        <div class=\"two fields\">\n          <div class=\"required field\">\n            <label for=\"firstname\">First name:</label>\n            <input id=\"firstname\" name=\"firstname\" formControlName=\"firstname\">\n            <div *ngIf=\"person.get('firstname').touched\">\n              <div class=\"ui negative message\" *ngIf=\"person.get('firstname').errors?.required\">\n                field is required\n              </div>\n              <div class=\"ui negative message\" *ngIf=\"person.get('firstname').errors?.minLength\">\n                minimum length of 2 required\n              </div>\n            </div>\n          </div>\n          <div class=\"required field\">\n            <label for=\"lastname\">Last name:</label>\n            <input id=\"lastname\" name=\"lastname\" formControlName=\"lastname\">\n            <div *ngIf=\"person.get('lastname').touched\">\n              <div class=\"ui negative message\" *ngIf=\"person.get('lastname').errors?.required\">\n                field is required\n              </div>\n              <div class=\"ui negative message\" *ngIf=\"person.get('lastname').errors?.minLength\">\n                minimum length of 2 required\n              </div>\n            </div>\n          </div>\n        </div>\n        <div class=\"required field\">\n          <label for=\"email\">email</label>\n          <input id=\"email\" name=\"email\" formControlName=\"email\">\n          <div *ngIf=\"person.get('email').touched\">\n            <div class=\"ui negative message\" *ngIf=\"person.get('email').errors?.required\">\n              field is required\n            </div>\n            <div class=\"ui negative message\" *ngIf=\"person.get('email').errors?.email\">\n              enter a valid email\n            </div>\n          </div>\n        </div>\n        <div formGroupName='passwordGroup'>\n          <div class=\"required field\">\n            <label for=\"password\">Password:</label>\n            <input type=\"password\" id=\"password\" formControlName='password'>\n            <div class='ui negative message' *ngIf=' passwordControl.errors?.passwordTooShort && passwordControl.touched'>\n              password too short, please use at least {{passwordControl.errors?.passwordTooShort.requiredLength}} letters (got {{passwordControl.errors?.passwordTooShort.actualLength}})\n            </div>\n          </div>\n          <div class=\"required field\">\n            <label for=\"confirmPassword\">Confirm password:</label>\n            <input type=\"password\" id=\"confirmPassword\" formControlName='confirmPassword'>\n          </div>\n          <div class='ui negative message' *ngIf=' person.get(\"passwordGroup\").errors?.passwordsDiffer && person.get(\"passwordGroup\").get(\"confirmPassword\").touched  && person.get(\"passwordGroup\").get(\"password\").touched'>\n            passwords should be the same\n          </div>\n        </div>\n        <br>\n        <button type='submit' [disabled]='!person.valid' class=\"ui big positive fluid button\">register</button>\n      </div>\n    </form>\n\n  </div>\n</div>\n"
 
 /***/ }),
 
