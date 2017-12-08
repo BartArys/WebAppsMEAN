@@ -16,6 +16,10 @@ export class EventComponent implements OnInit {
   ngOnInit() {
   }
 
+  total(): Number {
+    return this.event.expenses.map(expense => expense.amount).reduce((prev, curr) => prev.valueOf() + curr.valueOf());
+  }
+
   delete() {
     this.dataService.deleteEvent(this.event).subscribe(response => this.removeEvent.emit(this.event));
   }

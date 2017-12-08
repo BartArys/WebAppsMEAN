@@ -803,7 +803,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/event/event/event.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"right floated content\">\n  <a class=\"ui button\" routerLinkActive=\"active\" routerLink='/event/{{event.id}}'>Edit</a>\n  <a class=\"ui button red\" (click)=\"delete()\">Remove</a>\n</div>\n<div class=\"header\">\n  {{event.name}}\n</div>\n\n<div class=\"content\">\n  <p>\n    500€ uncollected\n  </p>\n</div>\n"
+module.exports = "<div class=\"right floated content\">\n  <a class=\"ui button\" routerLinkActive=\"active\" routerLink='/event/{{event.id}}'>Edit</a>\n  <a class=\"ui button red\" (click)=\"delete()\">Remove</a>\n</div>\n<div class=\"header\">\n  {{event.name}}\n</div>\n\n<div class=\"content\">\n  <p>\n    {{ total() }}\n  </p>\n</div>\n"
 
 /***/ }),
 
@@ -833,6 +833,9 @@ var EventComponent = (function () {
         this.removeEvent = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* EventEmitter */]();
     }
     EventComponent.prototype.ngOnInit = function () {
+    };
+    EventComponent.prototype.total = function () {
+        return this.event.expenses.map(function (expense) { return expense.amount; }).reduce(function (prev, curr) { return prev.valueOf() + curr.valueOf(); });
     };
     EventComponent.prototype.delete = function () {
         var _this = this;
@@ -1074,7 +1077,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/event/expense/expense.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"right floated content\">\n  <a class=\"ui button\" routerLinkActive=\"active\" (click)=\"edit()\">Edit</a>\n  <a class=\"ui button red\" (click)=\"delete()\">Remove</a>\n</div>\n<div class=\"header\">\n  {{expense.description}} €{{expense.amount}}\n</div>\n\n<div class=\"content\">\n  <h4 class=\"subheader\">\n    {{ expense.paidBy.firstname }} {{ expense.paidBy.lastname }}\n  </h4>\n  <ul>\n    Paid for\n    <li *ngFor=\"let person of expense.paidFor\">\n      {{person.firstname}} {{person.lastname}}\n    </li>\n  </ul>\n</div>\n"
+module.exports = "<div *ngIf=\"isCreator()\" class=\"right floated content\">\n  <a class=\"ui button\" routerLinkActive=\"active\" (click)=\"edit()\">Edit</a>\n  <a class=\"ui button red\" (click)=\"delete()\">Remove</a>\n</div>\n<div class=\"header\">\n  {{expense.description}} €{{expense.amount}}\n</div>\n\n<div class=\"content\">\n  <h4 class=\"subheader\">\n    {{ expense.paidBy.firstname }} {{ expense.paidBy.lastname }}\n  </h4>\n  <ul>\n    Paid for\n    <li *ngFor=\"let person of expense.paidFor\">\n      {{person.firstname}} {{person.lastname}}\n    </li>\n  </ul>\n</div>\n"
 
 /***/ }),
 
@@ -1087,6 +1090,7 @@ module.exports = "<div class=\"right floated content\">\n  <a class=\"ui button\
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__expense_model__ = __webpack_require__("../../../../../src/app/event/expense.model.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__person_authentication_service__ = __webpack_require__("../../../../../src/app/person/authentication.service.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1100,13 +1104,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+
 var ExpenseComponent = (function () {
-    function ExpenseComponent(dataService, router) {
+    function ExpenseComponent(dataService, authService, router) {
         this.dataService = dataService;
+        this.authService = authService;
         this.router = router;
         this.removeExpense = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["v" /* EventEmitter */]();
     }
     ExpenseComponent.prototype.ngOnInit = function () {
+    };
+    ExpenseComponent.prototype.isCreator = function () {
+        return this.expense.paidBy.email === this.authService.person.email;
     };
     ExpenseComponent.prototype.edit = function () {
         this.router.navigate(["event/" + this.eventId + "/edit/" + this.expense.id]);
@@ -1136,6 +1145,7 @@ var ExpenseComponent = (function () {
             styles: [__webpack_require__("../../../../../src/app/event/expense/expense.component.css")]
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__expense_data_service__["a" /* ExpenseDataService */],
+            __WEBPACK_IMPORTED_MODULE_4__person_authentication_service__["a" /* AuthenticationService */],
             __WEBPACK_IMPORTED_MODULE_3__angular_router__["c" /* Router */]])
     ], ExpenseComponent);
     return ExpenseComponent;
