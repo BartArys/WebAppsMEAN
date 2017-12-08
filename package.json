@@ -10,7 +10,8 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "postinstall": "ng build"
+    "postinstall": "ng build",
+    "backend-test": "node ./node_modules/jasmine/bin/jasmine.js"
   },
   "dependencies": {
     "@angular/animations": "^5.0.0",
